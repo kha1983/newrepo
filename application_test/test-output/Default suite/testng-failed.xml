@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.DellSite_Test">
+      <class name="test.Contact_Page">
         <methods>
-          <include name="UserWillAbleToLoginBrowser"/>
+          <include name="UserWillAbleToOpenTheBrowser"/>
         </methods>
-      </class> <!-- test.DellSite_Test -->
+      </class> <!-- test.Contact_Page -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
