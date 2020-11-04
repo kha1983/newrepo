@@ -1,5 +1,7 @@
 package test;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -13,15 +15,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Twitter_Test {
-
-	private static final int priority = 0;
-	WebDriver driver;
+	static WebDriver driver;
 
 	@BeforeMethod
-	public void UserWillAbleToOpenBrowser() {
+	public static void UserWillBeAbleToOpenTheBrowser() {
 		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https:\\www.twitter.com");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
@@ -29,49 +29,56 @@ public class Twitter_Test {
 	}
 
 	@Test(priority = 1)
-	public void UserWillBeToAbleToLoginAccount() throws InterruptedException {
+	public static void UserWillBeAbleToLoginTheTwitter() {
 		driver.findElement(By.name("session[username_or_email]")).sendKeys("khadak.kathayat100@gmail.com");
-		driver.findElement(By.cssSelector("input[type='password']")).sendKeys("KK071520!!");
-		driver.findElement(By.xpath("//*[contains(text(),'Log in')]")).click();
-		Thread.sleep(2000);
+		WebElement element = driver.findElement(By.cssSelector("input[type='password']"));
+		element.sendKeys("KK071520!!");
+		element.sendKeys(Keys.ENTER);
 
-		// Validation of the IF twitter page is logged in
-		boolean status = driver.findElement(By.linkText("Tweet")).isDisplayed();
+		// Validation If Twitter page is displayed
+		boolean status = driver.findElement(By.linkText("Home")).isDisplayed();
+
 		if (status == true) {
-			System.out.println("Testing is sucessfull");
+			System.out.println("The testing is passed");
 		} else {
-			System.out.println("Testing is failed");
+			System.out.println("The testing is failed");
 		}
 
 	}
 
-	// Search the people in search box
 	@Test(priority = 2)
-	public void UserWillAbleToSearchFriendInTwitter() {
+	public static void UserWillAbleToPerformAllTheFunctionInTwitterPage() {
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https:\\www.twitter.com");
 		driver.findElement(By.name("session[username_or_email]")).sendKeys("khadak.kathayat100@gmail.com");
-		driver.findElement(By.cssSelector("input[type='password']")).sendKeys("KK071520!!");
-		driver.findElement(By.xpath("//*[contains(text(),'Log in')]")).click();
-		WebElement element = driver.findElement(By.xpath("//*[@type='text']"));
-		element.sendKeys("Mukunda Ghimire");
+		WebElement element = driver.findElement(By.cssSelector("input[type='password']"));
+		element.sendKeys("KK071520!!");
 		element.sendKeys(Keys.ENTER);
 
-		// Validation of if that name appears
-		String expextedTitle = "Mukunda Ghimire";
-		String actualTitle = driver.getTitle();
-		System.out.println("Your asserts starts here");
-		
-		try            {
-			Assert.assertEquals(actualTitle, expextedTitle);
+		WebElement element1 = driver.findElement(By.xpath("//*[@placeholder='Search Twitter']"));
+		element1.sendKeys("Mukunda Ghimire");
+		element1.sendKeys(Keys.ENTER);
+
+		// Validation if driver search specific name
+		String ExpectedResult = "Mukunda Ghimire";
+		String ActualResult = driver.getTitle();
+		System.out.println("Assert starts here");
+
+		try {
+			Assert.assertEquals(ActualResult, ExpectedResult);
+		} catch (Throwable T) {
+			System.out.println("Assert ends here");
 		}
-		catch(Throwable T)               {
-			System.out.println("My asserts ends here");
-		}
-	}		
+
+	}
+
 	@AfterMethod
-	public void UserWillAbleToCloseTheBrowser()                 {
+	public static void UserWillBeAbleToCloseAllPagesOpen() {
 		driver.close();
 		driver.quit();
-	
+
 	}
 
 }

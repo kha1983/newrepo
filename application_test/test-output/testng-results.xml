@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15189" started-at="2020-10-09T13:12:22 CDT" finished-at="2020-10-09T13:12:37 CDT">
+  <suite name="Default suite" duration-ms="29673" started-at="2020-11-04T12:06:59 CST" finished-at="2020-11-04T12:07:29 CST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15189" started-at="2020-10-09T13:12:22 CDT" finished-at="2020-10-09T13:12:37 CDT">
-      <class name="test.Contact_Page">
-        <test-method status="PASS" signature="UserWillAbleToOpenTheBrowser()[pri:0, instance:test.Contact_Page@2698dc7]" name="UserWillAbleToOpenTheBrowser" duration-ms="15152" started-at="2020-10-09T13:12:22 CDT" finished-at="2020-10-09T13:12:37 CDT">
+    <test name="Default test" duration-ms="29673" started-at="2020-11-04T12:06:59 CST" finished-at="2020-11-04T12:07:29 CST">
+      <class name="test.Twitter_Test">
+        <test-method status="PASS" signature="UserWillBeAbleToOpenTheBrowser()[pri:0, instance:test.Twitter_Test@133e16fd]" name="UserWillBeAbleToOpenTheBrowser" is-config="true" duration-ms="6874" started-at="2020-11-04T12:06:59 CST" finished-at="2020-11-04T12:07:06 CST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- UserWillAbleToOpenTheBrowser -->
-      </class> <!-- test.Contact_Page -->
+        </test-method> <!-- UserWillBeAbleToOpenTheBrowser -->
+        <test-method status="PASS" signature="UserWillBeAbleToLoginTheTwitter()[pri:1, instance:test.Twitter_Test@133e16fd]" name="UserWillBeAbleToLoginTheTwitter" duration-ms="2747" started-at="2020-11-04T12:07:06 CST" finished-at="2020-11-04T12:07:09 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserWillBeAbleToLoginTheTwitter -->
+        <test-method status="PASS" signature="UserWillBeAbleToCloseAllPagesOpen()[pri:0, instance:test.Twitter_Test@133e16fd]" name="UserWillBeAbleToCloseAllPagesOpen" is-config="true" duration-ms="2743" started-at="2020-11-04T12:07:09 CST" finished-at="2020-11-04T12:07:11 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserWillBeAbleToCloseAllPagesOpen -->
+        <test-method status="PASS" signature="UserWillBeAbleToOpenTheBrowser()[pri:0, instance:test.Twitter_Test@133e16fd]" name="UserWillBeAbleToOpenTheBrowser" is-config="true" duration-ms="6482" started-at="2020-11-04T12:07:11 CST" finished-at="2020-11-04T12:07:18 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserWillBeAbleToOpenTheBrowser -->
+        <test-method status="PASS" signature="UserWillAbleToPerformAllTheFunctionInTwitterPage()[pri:2, instance:test.Twitter_Test@133e16fd]" name="UserWillAbleToPerformAllTheFunctionInTwitterPage" duration-ms="8050" started-at="2020-11-04T12:07:18 CST" finished-at="2020-11-04T12:07:26 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserWillAbleToPerformAllTheFunctionInTwitterPage -->
+        <test-method status="PASS" signature="UserWillBeAbleToCloseAllPagesOpen()[pri:0, instance:test.Twitter_Test@133e16fd]" name="UserWillBeAbleToCloseAllPagesOpen" is-config="true" duration-ms="2740" started-at="2020-11-04T12:07:26 CST" finished-at="2020-11-04T12:07:29 CST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserWillBeAbleToCloseAllPagesOpen -->
+      </class> <!-- test.Twitter_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

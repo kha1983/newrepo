@@ -3,11 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.Contact_Page">
+      <class name="test.Twitter_Test">
         <methods>
-          <include name="UserWillAbleToOpenTheBrowser"/>
+          <include name="UserWillAbleToPerformAllTheFunctionInTwitterPage"/>
+          <include name="UserWillBeAbleToOpenTheBrowser"/>
         </methods>
-      </class> <!-- test.Contact_Page -->
+      </class> <!-- test.Twitter_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
